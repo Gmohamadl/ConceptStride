@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#6366f1">
+  <meta name="description" content="A welcoming space to understand AI, try things for yourself, and build confidence through guided learning. ConceptStride.">
+  <title>ConceptStride — Understand. Practice. Progress.</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='12' fill='%236366f1'/%3E%3Cpath d='M10 29h7v-9h7v-9h7' fill='none' stroke='%23ffffff' stroke-width='5'/%3E%3C/svg%3E">
+  <script src="preferences.js"></script>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="personalize.css">
+  <script src="vendor/bcrypt.min.js" defer></script>
+  <script src="auth.js" defer></script>
+  <script src="personalize.js" defer></script>
+  <script src="guide.js" defer></script>
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to learning content</a>
+  <button class="nav-scrim" id="navScrim" aria-label="Close navigation" hidden></button>
+  <aside class="sidebar" id="sidebar" aria-label="Main navigation">
+    <a class="brand" href="#dashboard" aria-label="ConceptStride home">
+      <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 40 40"><rect width="40" height="40" rx="11" fill="#6366f1"/><path d="M11 27h6v-7h6v-7h7" stroke="white" stroke-width="3" fill="none"/><path d="M24 13h6v6" stroke="white" stroke-width="3" fill="none"/></svg></span>
+      <span>Concept<span class="wordmark-stride">Stride</span><span class="brand-caption">UNDERSTAND. THEN ADVANCE.</span></span>
+    </a>
+    <div class="workspace-label"><span class="small-orbit" aria-hidden="true">✳</span><span>Your learning space</span></div>
+    <nav id="mainNav" class="nav-list"></nav>
+    <div class="sidebar-bottom">
+      <a href="#settings" class="nav-item settings-nav"><span data-icon="settings"></span><span>Settings & accessibility</span></a>
+      <div class="sidebar-note"><span class="tiny-label">YOUR NEXT STEP</span><p>A concept today.<br>A skill tomorrow.</p><span class="note-flower" aria-hidden="true">↗</span></div>
+      <button class="nav-item" data-page="about"><span data-icon="help"></span><span>About this project</span></button>
+      <div class="local-status"><span class="status-dot"></span><span id="saveStatus">Progress saved on this device</span></div>
+    </div>
+  </aside>
+  <div class="app-shell">
+    <header class="topbar">
+      <div class="breadcrumb"><button id="menuToggle" class="icon-button mobile-menu" aria-label="Open navigation" aria-expanded="false" aria-controls="sidebar"><span data-icon="menu"></span></button><span class="breadcrumb-root">My workspace</span><span class="breadcrumb-slash">/</span><strong id="sectionName">Overview</strong></div>
+      <div class="topbar-actions">
+        <form class="search-form" id="searchForm" role="search"><span data-icon="search"></span><input type="search" id="globalSearch" placeholder="Find a lesson…" aria-label="Find a lesson"><kbd aria-hidden="true">/</kbd></form>
+        <button class="focus-mode-button" id="focusModeButton" hidden>Exit focus mode</button>
+        <a href="#settings" class="icon-button top-settings" aria-label="Settings and accessibility"><span data-icon="settings"></span></a>
+        <button class="view-switch" id="viewToggle">Educator preview <span data-icon="arrow-up-right"></span></button>
+        <button class="signup-button" id="signupButton">Create account</button><button class="account-button" id="accountButton">Log in</button><button type="button" class="avatar avatar-button" id="avatarButton" aria-label="Open my profile">CS</button>
+      </div>
+    </header>
+    <div class="workspace-body">
+      <main id="main" tabindex="-1"></main>
+      <aside class="guide-panel" id="guidePanel" aria-label="ConceptStride lesson guide">
+        <div class="guide-heading"><span class="guide-symbol" aria-hidden="true">✳</span><div><h2>Stride Guide</h2><span>A little guidance. Your thinking.</span></div><button class="icon-button guide-clear" id="clearChat" aria-label="Start a new guide conversation" title="Start new conversation"><span data-icon="plus"></span></button></div>
+        <div class="guide-context" id="guideContext"><span data-icon="book"></span><span>AI Foundations</span></div>
+        <button type="button" class="guide-mobile-toggle" id="guideMobileToggle" aria-expanded="true" aria-controls="guideChatBody">Lesson help <span>−</span></button>
+        <div id="guideChatBody"><div id="chatLog" class="chat-log" role="log" aria-live="polite" aria-label="Lesson guide conversation"></div>
+        <div class="guide-prompts" id="guidePrompts"><button data-guide="Explain this simply">Explain simply <span>↗</span></button><button data-guide="Give me a hint">Give me a hint <span>↗</span></button><button data-guide="Give me a real-world example">Real-world example <span>↗</span></button></div>
+        <form id="chatForm" class="chat-form"><label class="sr-only" for="chatInput">Ask about an AI lesson</label><textarea id="chatInput" placeholder="Ask about a lesson…" rows="2" maxlength="1200"></textarea><button type="submit" class="send-button" aria-label="Send question"><span data-icon="arrow-up"></span></button></form>
+        <p class="guide-disclosure">Lesson-based help · no live AI connected.<br>Your conversation stays on this device.</p></div>
+        <div class="integrity-note"><span data-icon="shield"></span><div><strong>Your thinking comes first.</strong><p>Use hints to get unstuck. Explain the final idea in your own words.</p></div></div>
+      </aside>
+    </div>
+    <footer class="page-footer"><span>ConceptStride</span><span>Understand. Practice. Progress.</span><span>Independent learning prototype</span></footer>
+  </div>
+  <dialog id="appDialog" aria-labelledby="dialogTitle"><div id="dialogContent"></div></dialog>
+  <div class="toast" id="toast" role="status" hidden></div>
+</body>
+</html>
